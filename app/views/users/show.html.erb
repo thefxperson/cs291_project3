@@ -1,0 +1,12 @@
+<h1>User: <%= @user.name %></h1>
+<p>User ID: <%= @user.id %></p>
+
+<p><%= link_to "Edit User", edit_user_path(@user) %></p>
+<p><%= link_to "Delete User", user_path(@user), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+
+<h2>Posts</h2>
+<%= render @user.posts %>
+
+<%= link_to "Create new post.", new_user_post_path(@user) %><br>
+
+<a href="/">Return Home</a>

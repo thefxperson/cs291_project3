@@ -1,0 +1,15 @@
+<h4><%= @post.title %></h4>
+<p><%= @post.body %></p>
+
+<p><%= link_to "Edit post.", edit_post_path(@post) %> <%= link_to "Delete post.", post_path(@post), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></p>
+
+<h4>Comments:</h4>
+<%= render @post.comments %>
+
+<%= link_to "Create new comment.", new_post_comment_path(@post) %><br>
+<a href=<%= user_path(@post.user) %>>Return To User</a><br>
+<a href=<%= root_path %>>Return To Home</a>
+
