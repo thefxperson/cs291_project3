@@ -42,6 +42,10 @@ class UsersController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  def name
+    "#{name}"
+  end
+
   private
     def user_params
       params.require(:user).permit(:name)
