@@ -1,8 +1,8 @@
-<%= form_with model: [@user, @user.posts.build] do |form| %>
+<%= form_with model: [@user, @post] do |form| %>
   <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
-    <% @user.errors.full_messages_for(:title).each do |message| %>
+    <% @post.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
@@ -10,6 +10,9 @@
   <p>
     <%= form.label :body %><br>
     <%= form.text_area :body %>
+    <% @post.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </p>
 
   <div>
